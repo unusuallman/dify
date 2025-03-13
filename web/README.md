@@ -20,7 +20,7 @@ Then, configure the environment variables. Create a file named `.env.local` in t
 cp .env.example .env.local
 ```
 
-```
+```bash
 # For production release, change this to PRODUCTION
 NEXT_PUBLIC_DEPLOY_ENV=DEVELOPMENT
 # The deployment edition, SELF_HOSTED
@@ -101,11 +101,9 @@ pnpm run test
 ```
 
 If you are not familiar with writing tests, here is some code to refer to:
+
 * [classnames.spec.ts](./utils/classnames.spec.ts)
 * [index.spec.tsx](./app/components/base/button/index.spec.tsx)
-
-
-
 
 ## Documentation
 
