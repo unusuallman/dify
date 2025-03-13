@@ -1,37 +1,37 @@
-# Development with devcontainer
-This project includes a devcontainer configuration that allows you to open the project in a container with a fully configured development environment.
-Both frontend and backend environments are initialized when the container is started.
+# 使用 Devcontainer 开发
+
+该项目包含一个 Devcontainer 配置，可以让你在一个预配置完整的开发环境中打开本项目。
+当容器启动时，将同时初始化前端和后端环境。
+
 ## GitHub Codespaces
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/langgenius/dify)
 
-you can simply click the button above to open this project in GitHub Codespaces.
+[![在 GitHub Codespaces 中打开](https://github.com/codespaces/badge.svg)](https://codespaces.new/langgenius/dify)
 
-For more info, check out the [GitHub documentation](https://docs.github.com/en/free-pro-team@latest/github/developing-online-with-codespaces/creating-a-codespace#creating-a-codespace).
-
+点击上面的按钮，即可在 GitHub Codespaces 中打开本项目。  
+有关更多信息，请参见 [GitHub 文档](https://docs.github.com/en/free-pro-team@latest/github/developing-online-with-codespaces/creating-a-codespace#creating-a-codespace)。
 
 ## VS Code Dev Containers
-[![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/langgenius/dify)
 
-if you have VS Code installed, you can click the button above to open this project in VS Code Dev Containers.
+[![在 Dev Containers 中打开](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/langgenius/dify)
 
-You can learn more in the [Dev Containers documentation](https://code.visualstudio.com/docs/devcontainers/containers).
+如果你已经安装 VS Code，点击上面的按钮即可在 VS Code Dev Containers 中打开项目。  
+更多信息请参考 [Dev Containers 文档](https://code.visualstudio.com/docs/devcontainers/containers)。
 
+## Devcontainer 的优点
 
-## Pros of Devcontainer
-Unified Development Environment: By using devcontainers, you can ensure that all developers are developing in the same environment, reducing the occurrence of "it works on my machine" type of issues.
+- 统一开发环境：确保所有开发者在相同的环境下开发，避免“在我的机器上运行正常”的问题。
+- 快速启动：新开发者无需花大量时间配置环境，几步即可开始开发。
+- 环境隔离：将项目与主机系统隔离，减少操作系统更新或其它软件安装对开发环境的影响。
 
-Quick Start: New developers can set up their development environment in a few simple steps, without spending a lot of time on environment configuration.
+## Devcontainer 的缺点
 
-Isolation: Devcontainers isolate your project from your host operating system, reducing the chance of OS updates or other application installations impacting the development environment.
+- 学习曲线：对于不熟悉 Docker 和 VS Code 的开发者来说，使用 Devcontainers 可能略显复杂。
+- 性能影响：尽管通常影响不大，但容器内运行的程序可能比直接在主机上运行稍慢。
 
-## Cons of Devcontainer
-Learning Curve: For developers unfamiliar with Docker and VS Code, using devcontainers may be somewhat complex.
+## 故障排查
 
-Performance Impact: While usually minimal, programs running inside a devcontainer may be slightly slower than those running directly on the host.
+如果你在 Codespaces 中打开项目时遇到如下错误：
+![描述性文字](troubleshooting.png)
 
-## Troubleshooting
-if you see such error message when you open this project in codespaces:
-![Alt text](troubleshooting.png)
-
-a simple workaround is change `/signin` endpoint into another one, then login with GitHub account and close the tab, then change it back to `/signin` endpoint. Then all things will be fine.
-The reason is `signin` endpoint is not allowed in codespaces, details can be found [here](https://github.com/orgs/community/discussions/5204)
+一种简单的解决方法是将 `/signin` 端点改为其他端点，使用 GitHub 账号登录后关闭标签页，再将其改回 `/signin`。  
+这是因为 Codespaces 不允许直接使用 `signin` 端点，详细信息请参见 [这里](https://github.com/orgs/community/discussions/5204)
